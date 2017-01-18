@@ -1,8 +1,9 @@
 //var config = require("./config.json"),
 	//ServerBot = require("./ServerBot.js"),
 var Discord = require("discord.js");
-	
-//var sb = new ServerBot;
+var ServerBot = require("./ServerBot.js");
+
+var ServerBot = new ServerBot();
 var client = new Discord.Client();
 
 client.on("ready", function()
@@ -14,7 +15,12 @@ client.on("message", function (message)
 {
 	if(message.content === "ping")
 	{
-		message.reply("Hello?");
+		if(message.member.user.username == "Blackenedtitan"){
+			message.reply(message.member.user.username);
+		}else{
+			message.reply("Who are you?");
+		}
+		
 	}
 });
 
