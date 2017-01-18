@@ -1,30 +1,34 @@
 var cfg = require("../config.json");
+var data = require("../configs/Favouritism.json");
 var FavouritismModule = function(){};
 
-FavouritismModule.prototype.message = function(keyword, msg, data)
+FavouritismModule.prototype.message = function(keyword, msg)
 {
-	//Respond to positive users
-	for (var user in data.positive_users)
+	var user = msg.member.user.username.toLowerCase();
+	var favouritism = 50;
+	
+	if("undefined" != typeof data.users[user])
+		favouritism = data.users[user];
+
+	var rn_agree =  Math.floor(Math.random() * 100);
+	
+	//Check if the bot agrees with you
+	if(favouritism > rn_agree)
 	{
-		if (msg.member.user.username.toLowerCase() == data.positive_users[user].toLowerCase())
-		{
-			var rn =  Math.floor(Math.random() * data.positive_responses.length);
-			msg.reply(data.positive_responses[rn]);
-		}	
+		//He agrees
+		var rn_response =  Math.floor(Math.random() * data.positive_responses.length);
+		msg.reply(data.positive_responses[rn_response]);
+		
+		//Log it!
+		console.log("I like " + user + " more than I care: " + favouritism + " > " + rn_agree);
 	}
-	
-	
-	//Respond to negative users
-	for (var user in data.negative_users)
+	else
 	{
-		if (msg.member.user.username.toLowerCase() == data.negative_users[user].toLowerCase())
-		{
-			var rn =  Math.floor(Math.random() * data.negative_responses.length);
-			msg.reply(data.negative_responses[rn]);
-		}	
+		//He does not agree
+		console.log("I care more than I like " + user + ": " + favouritism + " < " + rn_agree);
+		var rn_response =  Math.floor(Math.random() * data.negative_responses.length);
+		msg.reply(data.negative_responses[rn_response]);
 	}
-	
-	console.log("Played favourites.");
 	
 }
 

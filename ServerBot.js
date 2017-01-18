@@ -25,7 +25,7 @@ ServerBot.prototype.load_modules = function()
 		modules[config.modules[i].mod]["keywords"] = config.modules[i].keywords;
 		
 		//Load Data
-		modules[config.modules[i].mod]["data"] = config.modules[i].data;
+		//modules[config.modules[i].mod]["data"] = config.modules[i].data;
 		
 		//Log it!
 		console.log("Module loaded - " + config.modules[i].name + " v" + config.modules[i].version);

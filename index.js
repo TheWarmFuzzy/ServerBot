@@ -13,16 +13,7 @@ client.on("ready", function()
 
 client.on("message", function (message)
 {
-	ServerBot.read_message(message)
-	/*if(message.content === "ping")
-	{
-		if(message.member.user.username == "Blackenedtitan"){
-			message.reply(message.member.user.username);
-		}else{
-			message.reply("Who are you?");
-		}
-		
-	}*/
+	ServerBot.read_message(message);
 });
 
 client.login("MjcxMDM2NTE0NjUyMTI3MjMy.C2AmmA.LKhkfNc7T10wB1UrK_RtQFi3Wkw")
