@@ -2,7 +2,6 @@
 	"name":"ServerBot",
 	"description":"Discord FTW",
 	"repository":"https://github.com/TheWarmFuzzy/ServerBot",
-	"logo": "http://node-js-sample.herokuapp.com/node.svg",
-	"keywords": ["node", "express", "static"],
+	"keywords": ["node"],
 	"image": "heroku/nodejs"
 }

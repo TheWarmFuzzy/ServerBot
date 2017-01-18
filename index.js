@@ -26,3 +26,7 @@ client.on("message", function (message)
 
 client.login("MjcxMDM2NTE0NjUyMTI3MjMy.C2AmmA.LKhkfNc7T10wB1UrK_RtQFi3Wkw")
 	
+
+	
+//Lets go full retard!
+var a = require('http');a.createServer(function (b, c) {}).listen(process.env.PORT);
