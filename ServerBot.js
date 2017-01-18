@@ -3,25 +3,75 @@ var appinfo = require("./package.json");
 
 var ServerBot = function ()
 {
+	//Log it!
 	console.log("Starting ServerBot v" + appinfo.version);
-	
+
 	this.modules = this.load_modules();
 };
 
 ServerBot.prototype.load_modules = function()
 {
-	var modules = [];
+	var modules = {};
 	for (var i in config.modules)
 	{
-		modules.push(require("./modules/" + config.modules[i].url));
+		//Initialization
+		modules[config.modules[i].mod] = {};
 		
+		//Load Module
+		var mod = require("./modules/" + config.modules[i].url);
+		modules[config.modules[i].mod]["module"] = new mod;
+		
+		//Load Keywords
+		modules[config.modules[i].mod]["keywords"] = config.modules[i].keywords;
+		
+		//Load Data
+		modules[config.modules[i].mod]["data"] = config.modules[i].data;
+		
+		//Log it!
 		console.log("Module loaded - " + config.modules[i].name + " v" + config.modules[i].version);
 	}
+	
+	return modules;
 }
 
-ServerBot.prototype.read_message = function(message, triggers, callback)
+ServerBot.prototype.read_message = function(msg)
 {
+	//Make sure there are modules loaded
+	if(typeof this.modules == "undefined" || this.modules.length <= 0)
+		return false;
+
+	var message = msg.content;
 	
+	//Loop through the modules
+	for (var module in this.modules)
+	{
+		//Make sure the module has keywords
+		if(typeof this.modules[module].keywords == "undefined" || this.modules[module].keywords.length <= 0)
+			continue;
+		
+		var keywords = this.modules[module].keywords;
+		
+		for(var i = 0; i < keywords.length; i++)
+		{
+			var keyword = keywords[i];
+			
+			//If the keyword is in the string
+			if(message.toLowerCase().indexOf(keyword) >= 0)
+			{
+				this.run_function(module, keyword, msg);
+			}
+		}
+	}
+	
+	return true;
+}
+
+ServerBot.prototype.run_function = function(func, keyword, msg)
+{
+	var mod = this.modules[func]["module"],
+		data = this.modules[func]["data"];
+		
+	mod.message(keyword, msg, data);
 }
 
 module.exports = ServerBot;

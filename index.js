@@ -8,12 +8,13 @@ var client = new Discord.Client();
 
 client.on("ready", function()
 {
-	console.log("Start!");
+	console.log("Lets get serving!");
 });
 
 client.on("message", function (message)
 {
-	if(message.content === "ping")
+	ServerBot.read_message(message)
+	/*if(message.content === "ping")
 	{
 		if(message.member.user.username == "Blackenedtitan"){
 			message.reply(message.member.user.username);
@@ -21,12 +22,13 @@ client.on("message", function (message)
 			message.reply("Who are you?");
 		}
 		
-	}
+	}*/
 });
 
 client.login("MjcxMDM2NTE0NjUyMTI3MjMy.C2AmmA.LKhkfNc7T10wB1UrK_RtQFi3Wkw")
 	
 
 	
-//Lets go full retard!
+//Heroku fix
+//Binds to given port so it thinks it has started up correctly
 var a = require('http');a.createServer(function (b, c) {}).listen(process.env.PORT);

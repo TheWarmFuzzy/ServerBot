@@ -1,9 +1,55 @@
 {
 	"modules":[
 		{
-			"name":"Emily Favouritism",
-			"url":"EmilyFavouritism.js",
-			"version":"0.0.0"
+			"mod":"FavouritismModule",
+			"name":"Favouritism Module",
+			"url":"Favouritism.js",
+			"version":"1.0.7",
+			"keywords":[
+				"do you agree serverbot?",
+				"right serverbot?",
+				"make sense serverbot?",
+				"do you think so serverbot?"
+			],
+			"data":{
+				"negative_responses":[
+					"At no point in your rambling, incoherent response were you even close to anything that could be considered a rational thought. Everyone in this room is now dumber for having listened to it. I award you no points, and may God have mercy on your soul.",
+					"No, that's silly.",
+					"Don't be ridiculous.",
+					"I don't think that's right.",
+					"I'm not so sure.",
+					"You're very confident, you shouldn't be.",
+					"Not really.",
+					"There's really no way to be sure.",
+					"One may never know.",
+					"Huh? Did you say something?",
+					"*Facepalm*",
+					"https://media.giphy.com/media/YuEdUiDmey8W4/giphy.gif",
+					"https://media.giphy.com/media/l0HlvKQ3Z9kESNG8g/giphy.gif",
+					"https://media.giphy.com/media/l3q2VKK2B5Gi0OyWY/source.gif",
+					"https://media.giphy.com/media/3o6ZsVdjTxKFGyBQGc/giphy.gif",
+					"https://media.giphy.com/media/149t2dI5M5nzvq/giphy.gif",
+					"https://media.giphy.com/media/gKjmphDeV05k4/giphy.gif",
+					"https://media.giphy.com/media/JObkqJCDc5XXi/giphy.gif",
+					"No, that's silly..."
+				],
+				"negative_users":[
+					"infinitehonour",
+					"blackenedtitan"
+				],
+				"positive_responses":[
+					"Yes of course! that makes total sense.",
+					"Most definitely.",
+					"That is the most brilliant thing I have ever heard.",
+					"https://media.giphy.com/media/GYx3rLjdBPfyM/giphy.gif",
+					"https://media.giphy.com/media/3ornjQYBRGv8E2Zqso/giphy.gif",
+					"https://media.giphy.com/media/J6ikkcRDDSL4I/giphy.gif"
+				],
+				"positive_users":[
+					"Luigi107girl",
+					"Kalokoi"
+				]
+			}
 		}
 	]
 }
