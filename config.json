@@ -2,14 +2,28 @@
 	"modules":[
 		{
 			"mod":"FavouritismModule",
-			"name":"Favouritism Module",
+			"name":"Agree",
+			"description":"Ask if the bot agrees with what you're saying.",
 			"url":"Favouritism.js",
-			"version":"1.1.1",
+			"activation-type":"Keywords and Phrases",
+			"version":"1.1.2",
 			"keywords":[
+				"!agree",
 				"do you agree serverbot?",
 				"right serverbot?",
 				"make sense serverbot?",
 				"do you think so serverbot?"
+			]
+		},
+		{
+			"mod":"HelpModule",
+			"name":"Help",
+			"description":"Lists the installed modules and the associated keywords and phrases.",
+			"url":"Help.js",
+			"activation-type":"Keyword",
+			"version":"1.1.6",
+			"keywords":[
+				"!help"
 			]
 		}
 	]
