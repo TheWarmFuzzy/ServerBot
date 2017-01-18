@@ -1,0 +1,21 @@
+{
+	"name":"ServerBot",
+	"version":"0.0.0",
+	"description":"Discord FTW",
+	"engines":{
+		"node":"7.4.0"
+	},
+	"main":"index.js",
+	"scripts":{
+		"start":"node index.js"
+	}
+	"dependencies":{
+	
+	},
+	"repository":{
+		"type":"git",
+		"url":"https://github.com/TheWarmFuzzy/ServerBot"
+	},
+	"keywords":[],
+	"license":"None"
+}
