@@ -1,0 +1,7 @@
+###################
+## Hide my secrets
+###################
+
+hidden
+node_modules
+config.json
