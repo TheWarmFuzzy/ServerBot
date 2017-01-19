@@ -6,7 +6,7 @@
 			"description":"Ask if the bot agrees with what you're saying.",
 			"url":"Favouritism.js",
 			"activation-type":"Keywords and Phrases",
-			"version":"1.1.2",
+			"version":"1.1.3",
 			"keywords":[
 				"!agree",
 				"do you agree serverbot?",
@@ -21,9 +21,22 @@
 			"description":"Lists the installed modules and the associated keywords and phrases.",
 			"url":"Help.js",
 			"activation-type":"Keyword",
-			"version":"1.1.6",
+			"version":"1.1.7",
 			"keywords":[
 				"!help"
+			]
+		},
+		{
+			"mod":"MusicModule",
+			"name":"Music Player",
+			"description":"Plays music in voice channels.",
+			"url":"Music.js",
+			"activation-type":"Keywords",
+			"version":"0.0.2",
+			"keywords":[
+				"!summon",
+				"!play",
+				"!kick"
 			]
 		}
 	]

@@ -2,7 +2,7 @@ var cfg = require("../config.json");
 var data = require("../configs/Favouritism.json");
 var FavouritismModule = function(){};
 
-FavouritismModule.prototype.message = function(keyword, msg)
+FavouritismModule.prototype.message = function(commands, msg)
 {
 	var user = msg.member.user.username.toLowerCase();
 	var favouritism = 50;

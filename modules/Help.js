@@ -2,7 +2,7 @@ var cfg = require("../config.json");
 var data = require("../configs/Help.json");
 var HelpModule = function(){};
 
-HelpModule.prototype.message = function(keyword, msg, parent)
+HelpModule.prototype.message = function(commands, msg, parent)
 {
 	var loaded_modules = parent.get_loaded_modules();
 	

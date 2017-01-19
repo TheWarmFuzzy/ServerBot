@@ -1,6 +1,6 @@
 {
   "name": "ServerBot",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Discord FTW",
   "engines": {
     "node": "7.4.0"
@@ -10,7 +10,10 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "discord.js": "^11.0.0"
+    "discord.js": "^11.0.0",
+    "ffmpeg": "0.0.4",
+    "opusscript": "0.0.1",
+    "ytdl-core": "^0.7.21"
   },
   "repository": {
     "type": "git",

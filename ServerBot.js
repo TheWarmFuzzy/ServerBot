@@ -84,10 +84,12 @@ ServerBot.prototype.read_message = function(msg)
 		{
 			var keyword = keywords[i];
 			
+			var keyword_position = message.toLowerCase().indexOf(keyword);
 			//If the keyword is in the string
-			if(message.toLowerCase().indexOf(keyword) >= 0)
+			if(keyword_position >= 0)
 			{
-				this.run_function(module, keyword, msg);
+				var commands = message.substring(keyword_position).toLowerCase().split(" ");
+				this.run_function(module, commands, msg);
 			}
 		}
 	}
@@ -95,12 +97,12 @@ ServerBot.prototype.read_message = function(msg)
 	return true;
 }
 
-ServerBot.prototype.run_function = function(func, keyword, msg)
+ServerBot.prototype.run_function = function(func, commands, msg)
 {
 	var mod = this.modules[func]["module"],
 		data = this.modules[func]["data"];
 		
-	mod.message(keyword, msg, this);
+	mod.message(commands, msg, this);
 }
 
 module.exports = ServerBot;
