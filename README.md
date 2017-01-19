@@ -12,17 +12,17 @@ ServerBot is a module based bot for chat program [Discord](https://discordapp.co
 _The modules are listed in order of when they were added to the project._
 
 * Agree
-** Either agrees or disagrees with a user upon a keyword. This is determined by the "favouritism" value set per user of a channel. If this value doesn't exist it will be a 50-50.
+	* Either agrees or disagrees with a user upon a keyword. This is determined by the "favouritism" value set per user of a channel. If this value doesn't exist it will be a 50-50.
 * Help Module
-** Lists currently active modules as well as their description and activation keywords.
+	* Lists currently active modules as well as their description and activation keywords.
 
 
 ##Future Modules
 _Implimentation of each module is not assured. Names may be subject to change._
 
 * Music Player
-** Plays music in voice channels
+	* Plays music in voice channels
 * Storage
-** Adds a database so the bot can be stateful
+	* Adds a database so the bot can be stateful
 * Puns
-** The bot tells puns, who knows when?
+	* The bot tells puns, who knows when?
