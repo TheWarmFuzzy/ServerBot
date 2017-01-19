@@ -9,5 +9,6 @@ discord.json
 ##Folders
 ###################
 configs
+configs_examples
 hidden
 node_modules
