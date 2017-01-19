@@ -1,7 +1,7 @@
 #ServerBot
 
-[![Version](https://img.shields.io/badge/Version-1.3.0-green.svg?style=flat-square)]()
-[![Status](https://img.shields.io/badge/Stability-Stable-green.svg?style=flat-square)]()
+[![Version](https://img.shields.io/badge/Version-1.3.0-green.svg?style=flat-square)](https://github.com/TheWarmFuzzy/ServerBot)
+[![Status](https://img.shields.io/badge/Stability-Stable-green.svg?style=flat-square)](https://github.com/TheWarmFuzzy/ServerBot)
 [![Node](https://img.shields.io/badge/Node-7.4.0-blue.svg?style=flat-square)](http://nodejs.org)
 [![Tested on](https://img.shields.io/badge/Tested%20on-Windows%2010-lightgrey.svg?style=flat-square)]()
 
@@ -13,7 +13,7 @@ _The modules are listed in order of when they were added to the project._
 
 * Agree
 	* Either agrees or disagrees with a user upon a keyword. This is determined by the "favouritism" value set per user of a channel. If this value doesn't exist it will be a 50-50.
-* Help Module
+* Help
 	* Lists currently active modules as well as their description and activation keywords.
 
 

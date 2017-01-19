@@ -1,7 +1,0 @@
-{
-	"name":"ServerBot",
-	"description":"Discord FTW",
-	"repository":"https://github.com/TheWarmFuzzy/ServerBot",
-	"keywords": ["node"],
-	"image": "heroku/nodejs"
-}

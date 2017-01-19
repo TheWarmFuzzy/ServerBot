@@ -1,7 +1,7 @@
-//var config = require("./config.json"),
-	//ServerBot = require("./ServerBot.js"),
+var Config = require("./discord.json");
 var Discord = require("discord.js");
 var ServerBot = require("./ServerBot.js");
+
 
 var ServerBot = new ServerBot();
 var client = new Discord.Client();
@@ -16,10 +16,11 @@ client.on("message", function (message)
 	ServerBot.read_message(message);
 });
 
-client.login("MjcxMDM2NTE0NjUyMTI3MjMy.C2AmmA.LKhkfNc7T10wB1UrK_RtQFi3Wkw")
+//Check if the token exists to log in
+if("undefined" == typeof Config.discord.token){
+	console.error("The discord token has not been provided.")
+	console.error("Stopping ServerBot.")
+	process.exit()
+}
 	
-
-	
-//Heroku fix
-//Binds to given port so it thinks it has started up correctly
-var a = require('http');a.createServer(function (b, c) {}).listen(process.env.PORT);
+client.login(Config.discord.token)

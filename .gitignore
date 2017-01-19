@@ -2,5 +2,12 @@
 ## Hide my secrets
 ###################
 
+##Files
+###################
+discord.json
+
+##Folders
+###################
+configs
 hidden
 node_modules
