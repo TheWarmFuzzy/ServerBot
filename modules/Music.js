@@ -9,6 +9,21 @@ var MusicModule = function(){
 
 MusicModule.prototype.message = function(commands, msg, parent)
 {
+	//Execute regardless of who sent it
+	if("!summon" == commands[0])
+	{
+		this.join_channel(msg.member.voiceChannel, this.set_voice_connection, this.reset);
+	}
+	
+	
+	var user = msg.member.user.username.toLowerCase();
+	var members = this.get_members(this.channel);
+	
+	//If the user is not in the channel of the bot
+	if(members.indexOf(user) < 0)
+		return false;
+	
+	//Channel member commands
 	if("!doom" == commands[0])
 	{
 		this.play("doom");
@@ -34,10 +49,6 @@ MusicModule.prototype.message = function(commands, msg, parent)
 		this.play(song);
 	}
 	
-	if("!summon" == commands[0])
-	{
-		this.join_channel(msg.member.voiceChannel, this.set_voice_connection, this.reset);
-	}
 	
 }
 
@@ -56,6 +67,22 @@ MusicModule.prototype.set_voice_connection = function(self, connection)
 	self.voice_connection = connection;
 }
 
+
+MusicModule.prototype.get_members = function(channel){
+	
+	var members = [];
+	
+	if("undefined" != typeof channel)
+	{
+		var members = channel.members.array();
+		for(var i in members)
+		{
+			members.push(members[i].user.username.toLowerCase());
+		}
+	}
+	
+	return members
+}
 
 MusicModule.prototype.play = function(song)
 {
