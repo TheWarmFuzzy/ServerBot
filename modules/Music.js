@@ -5,6 +5,7 @@ const ytdl = require("ytdl-core");
 var MusicModule = function(){
 	this.channel;
 	this.voice_connection;
+	this.dispatch;
 };
 
 MusicModule.prototype.message = function(commands, msg, parent)
@@ -29,6 +30,7 @@ MusicModule.prototype.message = function(commands, msg, parent)
 		this.play("doom");
 	}
 	
+	
 	if("!kick" == commands[0])
 	{
 		if("undefined" != typeof this.voice_connection)
@@ -48,7 +50,21 @@ MusicModule.prototype.message = function(commands, msg, parent)
 		
 		this.play(song);
 	}
+
+	if("!pause" == commands[0])
+	{
+		this.pause();
+	}
 	
+	if("!setvolume" == commands[0])
+	{
+		this.set_volume(commands[1]);
+	}
+	
+	if("!stop" == commands[0])
+	{
+		this.stop();
+	}
 	
 }
 
@@ -84,6 +100,27 @@ MusicModule.prototype.get_members = function(channel){
 	return members
 }
 
+MusicModule.prototype.pause = function()
+{
+	if("undefined" != typeof this.dispatch)
+		this.dispatch.pause();
+}
+
+MusicModule.prototype.stop = function()
+{
+	if("undefined" != typeof this.dispatch)
+		this.dispatch.end();
+}
+
+MusicModule.prototype.set_volume = function(volume)
+{
+	if(isNaN(volume))
+		return
+	
+	if("undefined" != typeof this.dispatch)
+		this.dispatch.setVolume(Math.min(volume, 2));
+}
+
 MusicModule.prototype.play = function(song)
 {
 	if("undefined" == typeof this.voice_connection)
@@ -113,7 +150,7 @@ MusicModule.prototype.search = function(song)
 MusicModule.prototype.start_stream = function(song_info)
 {
 	var stream = ytdl(song_info.url, {filter:"audioonly"});
-	var dispatch = this.voice_connection.playStream(stream,song_info.stream_options);
+	this.dispatch = this.voice_connection.playStream(stream,song_info.stream_options);
 }
 
 
